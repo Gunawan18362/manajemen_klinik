@@ -10,11 +10,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PrivateChatController;
 
-/*
-|--------------------------------------------------------------------------
-| PUBLIC ROUTES
-|--------------------------------------------------------------------------
-*/
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
@@ -27,12 +22,6 @@ Route::post('/register', [AuthController::class, 'register'])->name('register.pr
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-
-/*
-|--------------------------------------------------------------------------
-| ADMIN ROUTES
-|--------------------------------------------------------------------------
-*/
 Route::middleware(['auth', 'role:admin'])
     ->prefix('admin')
     ->name('admin.')
@@ -55,12 +44,6 @@ Route::middleware(['auth', 'role:admin'])
     Route::post('/chat/send/{id}', [PrivateChatController::class, 'sendMessage'])->name('chat.send');
 });
 
-
-/*
-|--------------------------------------------------------------------------
-| PASIEN ROUTES
-|--------------------------------------------------------------------------
-*/
 Route::middleware(['auth', 'role:pasien'])
     ->prefix('pasien')
     ->name('pasien.')
