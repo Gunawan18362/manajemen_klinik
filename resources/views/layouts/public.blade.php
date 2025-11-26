@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +22,7 @@
             background: #ffffffc7;
             backdrop-filter: blur(10px);
             padding: 12px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .btn-primary-custom {
@@ -44,19 +45,27 @@
             padding: 40px;
             width: 450px;
             margin: 50px auto;
-            box-shadow: 0px 12px 25px rgba(0,0,0,0.1);
+            box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.1);
             animation: fadeIn 0.8s ease;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 
     @stack('styles')
 
 </head>
+
 <body>
 
     {{-- NAVIGATION --}}
@@ -67,10 +76,16 @@
                 Klinik Sehat
             </a>
 
-            {{-- tampilkan tombol login/daftar jika belum login --}}
-            @guest
-                <a href="{{ route('login') }}" class="btn btn-primary-custom">Login</a>
-            @endguest
+            @if(
+            !Auth::check() &&
+            !request()->is('login') &&
+            !request()->is('register') &&
+            !request()->routeIs('login') &&
+            !request()->routeIs('register')
+            )
+            <a href="{{ route('login') }}" class="btn btn-primary-custom">Login</a>
+            @endif
+
         </div>
     </nav>
 
@@ -80,4 +95,5 @@
     </div>
 
 </body>
+
 </html>
