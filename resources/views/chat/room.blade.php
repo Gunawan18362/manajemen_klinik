@@ -97,7 +97,6 @@
     <div class="chat-box" id="chatBox">
         @foreach($chats as $c)
 
-            {{-- Jika admin yang kirim: tampilkan bubble kanan --}}
             @if($c->sender_role === 'admin')
                 <div class="bubble-container" style="justify-content: flex-end;">
                     <div class="bubble-admin">
@@ -106,7 +105,6 @@
                     </div>
                 </div>
 
-            {{-- Jika user yang kirim: tampilkan bubble kiri --}}
             @else
                 <div class="bubble-container" style="justify-content: flex-start;">
                     <div class="bubble-user">
