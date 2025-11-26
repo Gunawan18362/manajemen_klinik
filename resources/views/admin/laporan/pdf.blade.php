@@ -49,14 +49,12 @@
 </head>
 <body>
 
-    {{-- HEADER --}}
     <div class="header">
         <h2>Klinik Sehat</h2>
         <h4>Laporan Pendaftaran Janji Temu</h4>
         <p><strong>Bulan:</strong> {{ $namaBulan }}</p>
     </div>
 
-    {{-- TABEL LAPORAN --}}
     <table>
         <thead>
             <tr>
@@ -83,7 +81,6 @@
         </tbody>
     </table>
 
-    {{-- FOOTER --}}
     <div class="footer">
         Dicetak pada: {{ date('d-m-Y H:i') }}
     </div>
