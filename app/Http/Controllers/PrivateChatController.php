@@ -23,7 +23,6 @@ class PrivateChatController extends Controller
             abort(403, 'Anda tidak memiliki akses.');
         }
 
-        // Tandai pesan pasien sebagai sudah dibaca
         if (Auth::user()->role === 'admin') {
             PrivateChat::where('user_id', $id)
                 ->where('sender_role', 'pasien')
