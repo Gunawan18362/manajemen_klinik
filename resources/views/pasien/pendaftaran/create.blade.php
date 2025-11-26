@@ -8,7 +8,6 @@
     <form action="{{ route('pasien.pendaftaran.store') }}" method="POST">
         @csrf
 
-        {{-- PILIH DOKTER --}}
         <div class="mb-3">
             <label class="form-label">Dokter</label>
             <select name="dokter_id" id="dokterSelect" class="form-select" required>
@@ -22,19 +21,16 @@
             </select>
         </div>
 
-        {{-- TAMPILKAN JADWAL PRAKTEK --}}
         <div class="mb-3">
             <label class="form-label">Jadwal Praktek</label>
             <input type="text" id="jadwalPraktek" class="form-control" readonly>
         </div>
 
-        {{-- TANGGAL --}}
         <div class="mb-3">
             <label class="form-label">Tanggal</label>
             <input type="date" name="tanggal" class="form-control" required>
         </div>
 
-        {{-- JAM --}}
         <div class="mb-3">
             <label class="form-label">Jam Kunjungan</label>
             <select name="jam" id="jamSelect" class="form-select" required>
@@ -42,7 +38,6 @@
             </select>
         </div>
 
-        {{-- KELUHAN --}}
         <div class="mb-3">
             <label class="form-label">Keluhan</label>
             <textarea name="keluhan" class="form-control" rows="3" required></textarea>
@@ -53,8 +48,6 @@
     </form>
 </div>
 
-
-{{-- SCRIPT --}}
 <script>
     const dokterSelect = document.getElementById("dokterSelect");
     const jadwalPraktek = document.getElementById("jadwalPraktek");

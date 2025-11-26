@@ -25,8 +25,6 @@
     <p>Selamat datang, <strong>{{ $pasien->user->name }}</strong>!</p>
 
     <div class="row mt-4">
-
-        {{-- PROFIL --}}
         <div class="col-md-4 mb-3">
             <a href="{{ route('pasien.profil') }}" class="text-decoration-none text-dark">
                 <div class="menu-card shadow-sm bg-white">
@@ -38,7 +36,6 @@
             </a>
         </div>
 
-        {{-- PENDAFTARAN --}}
         <div class="col-md-4 mb-3">
             <a href="{{ route('pasien.pendaftaran.index') }}" class="text-decoration-none text-dark">
                 <div class="menu-card shadow-sm bg-white">
@@ -50,7 +47,6 @@
             </a>
         </div>
 
-        {{-- CHAT ADMIN --}}
         <div class="col-md-4 mb-3">
             <a href="{{ route('pasien.chat') }}" class="text-decoration-none text-dark">
                 <div class="menu-card shadow-sm bg-white">
